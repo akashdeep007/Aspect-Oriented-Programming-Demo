@@ -2,8 +2,9 @@ package com.demo.springaop;
 
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
+import com.demo.springaop.dao.AccountDAO;
 @Configuration
 public class HelloSpringApp {
 
@@ -11,6 +12,10 @@ public class HelloSpringApp {
 
 		AnnotationConfigApplicationContext context = 
 				new AnnotationConfigApplicationContext(Config.class);
+		
+		AccountDAO account = context.getBean("accountDAO", AccountDAO.class);
+		
+		account.addAccount();
 				
 		context.close();
 	}
