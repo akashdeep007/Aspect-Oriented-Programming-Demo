@@ -19,7 +19,7 @@ public class HelloSpringApp {
 		AccountDAO account = context.getBean("accountDAO", AccountDAO.class);
 		
 		account.addAccount();
-		boolean flag = true;
+		boolean flag = false;
 		try
 		{
 		List<Account> ob = account.listAccount(flag);

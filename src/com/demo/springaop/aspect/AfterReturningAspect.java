@@ -13,7 +13,7 @@ import com.demo.springaop.entity.Account;
 @Aspect
 public class AfterReturningAspect {
 
-	@Pointcut("execution(public * listAccount())")
+	@Pointcut("execution(public * listAccount(*))")
 	private void p() {}
 	
 	@AfterReturning(pointcut = "p()",returning = "result")
