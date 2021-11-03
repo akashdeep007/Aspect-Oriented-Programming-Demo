@@ -3,6 +3,7 @@ package com.demo.springaop.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import org.springframework.stereotype.Component;
 
 import com.demo.springaop.entity.Account;
@@ -15,8 +16,10 @@ public class AccountDAO {
 		System.out.println("Doing DB Work");
 	}
 
-	public List<Account> listAccount()
+	public List<Account> listAccount(boolean flag)
 	{
+		if(flag==true)
+			throw new RuntimeException("Manual Exception for Testing");
 		List<Account> ob = new ArrayList<Account>();
 		Account a1 = new Account("abc","abc");
 		Account a2 = new Account("xyz","xyz");

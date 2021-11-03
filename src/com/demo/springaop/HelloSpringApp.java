@@ -19,9 +19,16 @@ public class HelloSpringApp {
 		AccountDAO account = context.getBean("accountDAO", AccountDAO.class);
 		
 		account.addAccount();
-		List<Account> ob = account.listAccount();
+		boolean flag = true;
+		try
+		{
+		List<Account> ob = account.listAccount(flag);
 		for(Account temp : ob)
 			System.out.println(temp);
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
 		context.close();
 	}
 
